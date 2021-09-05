@@ -1,0 +1,3 @@
+# Project exclude paths
+/chap5/recipes-app/dist/assets/
+/chap5/recipes-app/node_modules/

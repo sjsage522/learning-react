@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style media="screen">
+        #container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #container>div {
+            height: 5em;
+            width: 5em;
+            background-color: purple;
+        }
+    </style>
+    <title>Let</title>
+</head>
+<body>
+    <h1>박스를 클릭하세요</h1>
+    <div id="container"></div>
+    <script>
+        const container = document.getElementById('container');
+        let div;
+        for (let i=0; i<5; i++) {
+            div = document.createElement('div');
+            div.onclick = function () {
+                alert('이것은 박스 #' + i + '입니다.');
+            };
+            container.appendChild(div);
+        }
+    </script>
+</body>
+</html>

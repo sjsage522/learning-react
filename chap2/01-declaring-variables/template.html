@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template String</title>
+</head>
+<body>
+    <h1>Template String</h1>
+    <p>Open the console</p>
+    <script>
+        let article = {
+            title: "Template String",
+            body: `
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias assumenda autem consectetur</p>
+                    <p>perspiciatis praesentium quod quos repellendus? Nulla, quas.</p>
+                </div>
+            `
+        };
+
+        document.body.innerHTML = `
+            <section>
+                <header>
+                    <h1>The HTML5 Blog</h1>
+                </header>
+                <article>
+                    <h2>${article.title}</h2>
+                    ${article.body}
+                </article>
+                <footer>
+                    <p>copyright ${new Date().getFullYear()} | The HTML5 Blog</p>
+                </footer>
+            </section>
+        `
+    </script>
+</body>
+</html>

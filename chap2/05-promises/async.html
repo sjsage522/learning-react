@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Async with fetch</title>
+</head>
+<body>
+    <h1>Async with fetch</h1>
+    <p>Open the console</p>
+    <div id="container"></div>
+    <script>
+        const getFakePerson = async () => {
+            try {
+                let res = await fetch("https://api.randomuser.me?nat=US&results=1");
+                let results = res.json();
+                results.then(members => {
+                    let userInfo = members.results;
+                    document.body.innerHTML = userInfo[0].gender;
+                });
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        getFakePerson();
+    </script>
+</body>
+</html>
