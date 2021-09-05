@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {createContext} from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import ColorProvider from "./color-hooks";
+
+export const ColorContext = createContext();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <ColorProvider>
+        <App/>
+    </ColorProvider>,
+    document.getElementById('root')
 );
